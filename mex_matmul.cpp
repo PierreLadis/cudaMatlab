@@ -120,7 +120,6 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) {
 	mxArray *res = mxCreateDoubleMatrix(nrA, ncB, mxREAL);
 	double *ptr_C = (double *) mxGetData(res);
 	for (int j=0; j < nrA*ncB; j++) ptr_C[j] = (double)C[j];
-	//~ std::transform(ptr_C, ptr_C + nrA*ncB, C, [](double x) { return (float)x; });
 	plhs[0] = res;
 	
 	delete[] A;
